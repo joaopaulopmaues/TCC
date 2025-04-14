@@ -1,0 +1,100 @@
+ID	Ransomware families
+S1129	Akira
+S0640	Avaddon
+S1053	AvosLocker
+S0638	Babuk
+S0606	Bad Rabbit
+S0570	BitPaymer
+S1070	Black Basta
+S1068	BlackCat
+S1096	Cheerscrypt
+S0611	Clop
+S0575	Conti
+S0625	Cuba
+S0616	DEATHRANSOM
+S0659	Diavol
+S0554	Egregor
+S0605	EKANS
+S0618	FIVEHANDS
+S0617	HELLOKITTY
+S0389	JCry
+S0372	LockerGoga
+S0449	Maze
+S0576	MegaCortex
+S0457	Netwalker
+S0556	Pay2Key
+S1058	Prestige
+S0654	ProLock
+S0583	Pysa
+S0481	Ragnar Locker
+S0496	REvil
+S0400	RobbinHood
+S1073	Royal
+S0446	Ryuk
+S0370	SamSam
+S0639	Seth-Locker
+S0242	SynAck
+S0366	WannaCry
+S0612	WastedLocker
+S0689	WhisperGate
+
+	Blackmatter
+	Cerber
+	CryptoShield
+	Crysis
+	CTBLocker
+	Flawed
+	Globeimposter
+	Jeff
+	Locky
+	Mole
+	Sage
+	Spora
+	Striked
+	TeslaCrypt
+	Unlock26
+	Win32.Blocker
+	Xorist
+	Zeta
+	Dharma
+	Dharma (ZILLA var)
+	Doppelpaymer (Bitpaymer var)
+	Exorcist
+	Lockbit
+	Makop
+	Mountlocker
+	Nefilim
+	Netwalker
+	Phobos
+	Ragnarok
+	RansomeXX
+	Stop
+	Thanos
+	Zeppelin
+	Satana (Satan)
+	Petya
+	Mischa
+	Hermes
+	GandCrab
+	PwndLocker
+	NightSky
+	LockFile
+	NightSky (w/ HUI Loader)
+	LockFile (w/ HUI Loader)
+	Pandora (w/ HUI Loader)
+	Ryuk (w/ GrimAgent)
+	FIVEHANDS (w/ SombRAT)
+	Sekhmet (Egregor's father) - https://www.reddit.com/r/Malware/comments/fs6apl/looking_for_sekhmet_ransomware_sample_for_analysis/
+	Egregor (w/ QakBot)
+	ProLock (w/ QakBot)
+	Maze (similar to Sekhmet)
+	Diavol (w/ Bazar)
+	Conti (Bumblebee)
+	Conti (RaaS Bazar)
+	Conti (w/ Rclone)
+	DarkSide RaaS's (w/ Rclone)
+	CryptoMix
+OBS:
+https://data.mendeley.com/datasets/p3v94dft2y/3
+Ransomwares associados à operação DarkSide
+NotPetya - Mitre classifica como Wiper mas não como ransomware, uma vez que sua razão de criação nunca foi que os dados criptografados fossem recuperáveis

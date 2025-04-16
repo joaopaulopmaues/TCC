@@ -163,3 +163,7 @@ def encoding_processed_json(output_paths,input_path): # after all the jsons are 
         gen_csvs_14_for_one_dataset(filenames,expanded_columns)
     else:
         print("Unexpected input type!")
+
+#usage example
+#filenames=["samples/Malign/VirusShare","samples/Malign/ISOT","samples/Malign/Sorel","samples/Benign"]
+#encoding_processed_json(filenames,wholeDataset.csv)

@@ -1,15 +1,16 @@
-ID,Ransomware families
-S1129,Akira
-S0640,Avaddon
-S1053,AvosLocker
-S0638,Babuk
-S0606,Bad Rabbit
-S0570,BitPaymer
-S1070,Black Basta
-S1068,BlackCat
-S1096,Cheerscrypt
-S0611,Clop
-S0575,Conti
+ID,Ransomware families,STATUS
+S1129,Akira,DONE
+00000,RedAlert,DONE
+S1053,AvosLocker,DONE
+S0640,Avaddon,NOT_FOUND
+S0638,Babuk,DONE
+S0606,Bad Rabbit,DONE
+S0570,BitPaymer,NOT_FOUND
+S1070,Black Basta,DONE
+S1068,BlackCat,DONE
+S1096,Cheerscrypt,NOT_FOUND
+S0611,Clop,DONE
+S0575,Conti,DONE
 S0625,Cuba
 S0616,DEATHRANSOM
 S0659,Diavol
@@ -21,7 +22,7 @@ S0389,JCry
 S0372,LockerGoga
 S0449,Maze
 S0576,MegaCortex
-S0457,Netwalker
+S0457,Netwalker,*last_today
 S0556,Pay2Key
 S1058,Prestige
 S0654,ProLock

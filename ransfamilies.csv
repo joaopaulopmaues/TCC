@@ -1,6 +1,8 @@
 ID,Ransomware families
+S1129,Akira
 S0640,Avaddon
 S1053,AvosLocker
+00000,RedAlert
 S0638,Babuk
 S0606,Bad Rabbit
 S0570,BitPaymer

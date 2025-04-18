@@ -10,7 +10,7 @@ import time
 #familynamelist=['black','wannacry']
 
 
-def list_rules(browser,familyname,inputdate='0000-00-00',quant=5):#date limit and max quantity
+def list_rules(browser,familyname,inputdate='0000-00-00',quant=5,t=10):#date limit and max quantity
     if inputdate=='0000-00-00':
         today=date.today()
         date=today.strftime('%Y-%m-%d')
@@ -49,7 +49,7 @@ def list_rules(browser,familyname,inputdate='0000-00-00',quant=5):#date limit an
             break
 
         url='https://valhalla.nextron-systems.com/info/rule/'+aux
-        time.sleep(3)
+        time.sleep(t)
         browser.get(url)
         try:
             s='/html/body/section/section/div[3]/div[3]/div[2]/div[4]'
@@ -58,20 +58,21 @@ def list_rules(browser,familyname,inputdate='0000-00-00',quant=5):#date limit an
             q+=1
         except Exception as e2:
             url=back
-            time.sleep(3)
+            time.sleep(t)
             browser.get(back)
             x+=8
             continue
         url=back
-        time.sleep(3)
+        time.sleep(t)
         browser.get(back)
         x+=8
     return YARA
 
-def list_hashes(browser,YARA): #YARA is a list of YARA rule names found after running list_rules
+def list_hashes(browser,YARA,t=20): #YARA is a list of YARA rule names found after running list_rules
     result=[]
     for s in YARA:
         url='https://valhalla.nextron-systems.com/info/rule/'+s
+        time.sleep(t)
         browser.get(url)
         i=2
         while (True):
@@ -84,9 +85,9 @@ def list_hashes(browser,YARA): #YARA is a list of YARA rule names found after ru
                 break
     return result
 
-def valhalla(browser,familyname,date='0000-00-00',quant=5):
-    YARA=list_rules(browser, familyname, date, quant)
-    result=list_hashes(browser,YARA)
+def valhalla(browser,familyname,date='0000-00-00',quant=5,t=10):
+    YARA=list_rules(browser, familyname, date, quant,t)
+    result=list_hashes(browser,YARA,2*t)
     return set(result)
         #with open(path,'w',newline='') as f: #path will be a string that contains hasheslist.csv
         #    f.write(a+','+familyname)

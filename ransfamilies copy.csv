@@ -1,5 +1,5 @@
-ID	Ransomware families	STATUS
-S1129	Akira	FEITO
+ID	Ransomware families
+S1129	Akira
 S0640	Avaddon
 S1053	AvosLocker
 S0638	Babuk
@@ -98,3 +98,5 @@ OBS:
 https://data.mendeley.com/datasets/p3v94dft2y/3
 Ransomwares associados à operação DarkSide
 NotPetya - Mitre classifica como Wiper mas não como ransomware, uma vez que sua razão de criação nunca foi que os dados criptografados fossem recuperáveis
+
+Até Black Basta (inclusive) todos com regras a partir de 2021

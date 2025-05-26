@@ -15,7 +15,9 @@ def update_csv(s, v, filename='hasheslist.csv'):
     
     # Search and update
     for row in rows:
-        if row and row[0] == s:  # Check if row exists and first column matches
+        if len(row)<2:
+            continue
+        elif row and row[1] == s:  # Check if row exists and first column matches
             while len(row) < 3:  # Ensure row has at least 3 columns
                 row.append('')
             row[2] = v  # Update third column (0-based index 2)
@@ -32,28 +34,30 @@ def update_csv(s, v, filename='hasheslist.csv'):
 #triage authenticate $TOKEN
 #triage file $hash download file -o 'path/to/file.zip' it is always a zip with infected as password
 
-def search_n_download_file(hashin,browser): #including Cuckoo's JSON report
-    integrations=["pikker","vs","tria.ge","ha"]
+def search_n_download_file(hashin,browser,logged=False): #including Cuckoo's JSON report
+    #integrations=["pikker","vs","tria.ge","ha"]
+    integrations=["pikker","tria.ge","ha"]
     for api in integrations:
         match api:
             case "pikker": #Cuckoo Sandbox
-                task_id = cuckoo_db.search(hashin,browser)
-                if task_id != "Not_Found":
-                    sample=task_id+'.zip/reports/report.json'
+                sample = cuckoo_db.search(hashin,browser)
+                if sample != "Not_Found":
                     update_csv(hashin,sample) # write the filename and path to the report in Hasheslist.csv
-                    return "Report_submitted!"
+                    return sample
             case "vs": #VirusShare
-                sample=vs.download_sample(hashin,browser)
+                sample=vs.download_sample(hashin,browser,logged=logged)
                 if ".zip" in sample:
                     update_csv(hashin,sample) # write the filename in Hasheslist.csv
-                    return "Ready_for_submission!"
+                    return sample
             case "tria.ge": #Tria.ge
                 sample=tg.download_sample(hashin)
                 if ".zip" in sample:
                     update_csv(hashin,sample)
-                    return "Ready_for_submission!"
+                    return sample
             case "ha": #Hybrid-Analysis
-                sample=ha.download_sample(hashin,browser)
+                sample=ha.download_sample(hashin,browser,logged=logged)
                 if ".sample" in sample:
                     update_csv(hashin,sample)
-                    return "Ready_for_submission!"
+                    return sample
+    update_csv(hashin,"Not_Found")
+    return "Not_Found"

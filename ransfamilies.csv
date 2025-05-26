@@ -1,4 +1,11 @@
 ID,Ransomware families
+S0242,SynAck ransomware
+00000,Flawed ransomware
+00000,Jeff ransomware
+00000,Mole ransomware
+00000,Sage ransomware
+00000,ZILLA ransomware
+00000,Stop ransomware
 S1129,Akira
 S0640,Avaddon
 S1053,AvosLocker
@@ -34,7 +41,6 @@ S1073,Royal
 S0446,Ryuk
 S0370,SamSam
 S0639,Seth-Locker
-S0242,SynAck
 S0366,WannaCry
 S0612,WastedLocker
 S0689,WhisperGate
@@ -43,19 +49,14 @@ S0689,WhisperGate
 00000,CryptoShield
 00000,Crysis
 00000,CTBLocker
-00000,Flawed
 00000,Globeimposter
-00000,Jeff
 00000,Locky
-00000,Mole
-00000,Sage
 00000,Spora
 00000,Striked
 00000,TeslaCrypt
 00000,Unlock26
 00000,Win32Blocker
 00000,Xorist
-00000,ZILLA
 00000,Zeta
 00000,Dharma
 00000,Doppelpaymer
@@ -68,7 +69,6 @@ S0689,WhisperGate
 00000,Phobos
 00000,Ragnarok
 00000,RansomeXX
-00000,Stop
 00000,Thanos
 00000,Zeppelin
 00000,Satan
@@ -79,7 +79,13 @@ S0689,WhisperGate
 00000,PwndLocker
 00000,NightSky
 00000,LockFile
-00000,Pandora
+00000,CryptoMix
+00000,Crylock
+00000,Lynx ransomware
 00000,Sekhmet
 00000,DarkSide
-00000,CryptoMix
+00000,Trigona
+00000,Pandora ransomware
+00000,Alphaware
+00000,Alpha ransomware
+00000,Hellcat

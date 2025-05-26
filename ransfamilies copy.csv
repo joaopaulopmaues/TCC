@@ -6,7 +6,7 @@ S0638	Babuk
 S0606	Bad Rabbit
 S0570	BitPaymer
 S1070	Black Basta
-S1068	BlackCat
+S1068	BlackCat (also known as: AlphaV,ALPHV,AlphaVM,Noberus ***BUT NOT Alpha***)
 S1096	Cheerscrypt
 S0611	Clop
 S0575	Conti
@@ -37,6 +37,8 @@ S0242	SynAck
 S0366	WannaCry
 S0612	WastedLocker
 S0689	WhisperGate
+00000	
+00000	
 
 	Blackmatter
 	Cerber
@@ -94,6 +96,9 @@ S0689	WhisperGate
 	Conti (w/ Rclone)
 	DarkSide RaaS's (w/ Rclone)
 	CryptoMix
+	CryLock (variante do Cryakl)
+	Alpha (não confundir com AlphaV, que é o mesmo que ALPHV,AlphaVM, Noberus. Alpha é outro grupo)
+	Trigona (associated with CryLock and BlackCat)
 OBS:
 https://data.mendeley.com/datasets/p3v94dft2y/3
 Ransomwares associados à operação DarkSide

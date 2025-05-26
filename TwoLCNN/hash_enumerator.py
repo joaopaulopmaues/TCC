@@ -33,7 +33,7 @@ def hash_enumerator(browser, familylist, date='0000-00-00', quant=5, force=False
                     last_date = datetime.strptime(last_date_str, '%Y-%m-%d')
                     if (datetime.now() - last_date) < timedelta(weeks=3):
                         return ''  # Recent update exists and no specific date requested
-                except ValueError:
+                except:
                     pass  # Invalid date format, proceed with update
     except FileNotFoundError:
         with open(csv_file,'a+') as nf:
@@ -47,7 +47,7 @@ def hash_enumerator(browser, familylist, date='0000-00-00', quant=5, force=False
             needs_newline = True
     with open(csv_file, 'a', newline='') as file:
         file.write('\n')
-    df = pd.read_csv(csv_file,header=None,skiprows=1)
+    df = pd.read_csv(csv_file,header=None,skiprows=1,sep=',',low_memory=False)
     hashes = set(df.iloc[:,1])
     # Process each family
     for family in familylist:
@@ -57,6 +57,7 @@ def hash_enumerator(browser, familylist, date='0000-00-00', quant=5, force=False
             with open(csv_file, 'a', newline='') as f:
                 writer = csv.writer(f)
                 writer.writerow([family,"Not_Found"])
+            time.sleep(180)
         else:
             # Add hashes to the set and write "hash,family" to CSV
             h = h - hashes

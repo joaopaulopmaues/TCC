@@ -152,13 +152,16 @@ def encoding_processed_json(output_paths,input_path): # after all the jsons are 
     if type(output_paths)==list: #this means that the dataset is the one from XRan article
         idx=[(0,520*6263),(520*6263,520*(6263+668)),(520*(6263+668),520*(6263+668+8443)),(520*(6263+668+8443),520*(6263+668+8443+14797))]
         i=0
-        while(i<len(output_paths)):
+        while(i<4):
             begin=idx[i][0]
             end=idx[i][1]
             dfx_aux=expanded_columns.iloc[begin:end].copy()
             saux=filenames[i]
             gen_csvs_14_for_one_dataset(saux,dfx_aux)
             i+=1
+        if len(output_paths)>4:
+            newDataPart=expanded_columns.iloc[520*(6263+668+8443+14797):].copy()
+            gen_csvs_14_for_one_dataset(filenames[-1],newDataPart)
     elif type(output_paths)==str: #this means that the dataset is the one collected by the updater API
         gen_csvs_14_for_one_dataset(filenames,expanded_columns)
     else:
@@ -166,4 +169,5 @@ def encoding_processed_json(output_paths,input_path): # after all the jsons are 
 
 #usage example
 #filenames=["samples/Malign/VirusShare","samples/Malign/ISOT","samples/Malign/Sorel","samples/Benign"]
-#encoding_processed_json(filenames,wholeDataset.csv)
+#encoding_processed_json(filenames,"wholeDataset.csv")
+#encoding_processed_json(testingmain_14/NewDataset,"NewDataset.csv")

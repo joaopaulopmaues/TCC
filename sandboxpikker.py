@@ -20,8 +20,16 @@ def search(hashin,browser):#search hash
     browser.get('https://sandbox.pikker.ee/analysis/search')
     element=browser.find_element(By.XPATH,'//*[@id="form_search"]')
     ActionChains(browser).key_down(Keys.COMMAND,element).send_keys('v').key_up(Keys.COMMAND,element).perform()
-    A=wait.until(EC.visibility_of_any_elements_located(('xpath','//*[@id="results"]/div')))
-    A=browser.find_element(By.XPATH,'//*[@id="results"]/div')
+    try:
+        A=wait.until(EC.visibility_of_any_elements_located(('xpath','//*[@id="results"]/div')))
+        A=browser.find_element(By.XPATH,'//*[@id="results"]/div')
+    except:
+        try:
+            browser.find_element('xpath','//*[@id="analysis.views.search"]/div[2]/div[2]/div/form/button').click()
+            A=wait.until(EC.visibility_of_any_elements_located(('xpath','//*[@id="results"]/div')))
+            A=browser.find_element(By.XPATH,'//*[@id="results"]/div')
+        except:
+            return 'Not_Found'
     if A.get_attribute("class")=='panel panel-primary':
         aux=browser.find_element(By.XPATH,'/html/body/div[2]/div[3]/div/table/tbody').text
         for el in aux.split('#')[1:]:
@@ -37,11 +45,11 @@ def search(hashin,browser):#search hash
             except:
                 pass
         try:
-            download_report(url,'/Users/joaopaulopmaues/Downloads/',reported=True,get_done=True,mybrowser=browser)
+            downloaded_file=download_report(url,reported=True,get_done=True,mybrowser=browser)
         except:
             return 'Not_Found'
             #continue to the analysis page
     else:
         return 'Not_Found'
-    return task_id #if it succedes, it means it downloaded the report and it can be found in task_id.zip
+    return downloaded_file #if it succedes, it means it downloaded the report and it can be found in task_id.zip
     

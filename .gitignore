@@ -1,3 +1,7 @@
+TwoLCNN/consistentSamples/
+TwoLCNN/inconsistentSamples/
+newWholeDataset.csv
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
